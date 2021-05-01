@@ -1,5 +1,6 @@
 use crate::base::{char16, tresult, FIDString, TBool};
 use crate::utils::VstPtr;
+use crate::vst::CString;
 use vst3_com::interfaces::iunknown::IUnknown;
 use vst3_com::{c_void, com_interface};
 
@@ -12,11 +13,11 @@ pub struct ViewRect {
     pub bottom: i32,
 }
 
-pub const kPlatformTypeHWND: &[u8; 5] = b"HWND\0";
-pub const kPlatformTypeHIView: &[u8; 7] = b"HIView\0";
-pub const kPlatformTypeNSView: &[u8; 7] = b"NSView\0";
-pub const kPlatformTypeUIView: &[u8; 7] = b"UIView\0";
-pub const kPlatformTypeX11EmbedWindowID: &[u8; 17] = b"X11EmbedWindowID\0";
+pub const kPlatformTypeHWND: CString = b"HWND\0".as_ptr() as CString;
+pub const kPlatformTypeHIView: CString = b"HIView\0".as_ptr() as CString;
+pub const kPlatformTypeNSView: CString = b"NSView\0".as_ptr() as CString;
+pub const kPlatformTypeUIView: CString = b"UIView\0".as_ptr() as CString;
+pub const kPlatformTypeX11EmbedWindowID: CString = b"X11EmbedWindowID\0".as_ptr() as CString;
 
 #[com_interface("5BC32507-D060-49EA-A615-1B522B755B29")]
 pub trait IPlugView: IUnknown {

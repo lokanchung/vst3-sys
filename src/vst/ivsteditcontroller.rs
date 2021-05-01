@@ -37,7 +37,7 @@ pub enum KnobModes {
     kLinearMode = 2,
 }
 
-pub const kEditor: &[u8;7] = b"editor\0";
+pub const kEditor: CString = b"editor\0".as_ptr() as CString;
 
 // todo: update types
 #[repr(C)]
