@@ -37,6 +37,8 @@ pub enum KnobModes {
     kLinearMode = 2,
 }
 
+pub const kEditor: &[u8;7] = b"editor\0";
+
 // todo: update types
 #[repr(C)]
 #[derive(Copy, Clone)]

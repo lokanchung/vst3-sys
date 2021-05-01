@@ -12,6 +12,12 @@ pub struct ViewRect {
     pub bottom: i32,
 }
 
+pub const kPlatformTypeHWND: &[u8; 5] = b"HWND\0";
+pub const kPlatformTypeHIView: &[u8; 7] = b"HIView\0";
+pub const kPlatformTypeNSView: &[u8; 7] = b"NSView\0";
+pub const kPlatformTypeUIView: &[u8; 7] = b"UIView\0";
+pub const kPlatformTypeX11EmbedWindowID: &[u8; 17] = b"X11EmbedWindowID\0";
+
 #[com_interface("5BC32507-D060-49EA-A615-1B522B755B29")]
 pub trait IPlugView: IUnknown {
     unsafe fn is_platform_type_supported(&self, type_: FIDString) -> tresult;
